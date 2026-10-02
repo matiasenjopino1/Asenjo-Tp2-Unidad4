@@ -1,0 +1,7 @@
+Nombre: matias
+Apellido: asenjo
+Telefono: 351
+Email: matia.cba74@gmail.com
+Tipo: Ventas
+Asunto: aaa
+Descripcion: qqq

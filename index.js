@@ -5,7 +5,12 @@ formulario.addEventListener("submit", (event) => {
     event.preventDefault();
     const ajax = new XMLHttpRequest();
 
-    ajax.open("GET", "mensaje.json", true)
+    ajax.open("POST", "guardar.php", true)
+    ajax.setRequestHeader(
+        "Content-Type",
+        "application/x-www-form-urlencoded"
+    );
+
     ajax.onreadystatechange = () => {
         console.log("readyState", ajax.readyState)
 
@@ -19,6 +24,9 @@ formulario.addEventListener("submit", (event) => {
             }
         }
     }
+    const datosFormulario = new FormData(formulario);
 
-    ajax.send(null)
+    const parametros = new URLSearchParams(datosFormulario);
+
+    ajax.send(parametros);
 })
